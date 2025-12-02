@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,22 +13,27 @@
             font-family: 'Inter', sans-serif;
             background-color: #f8f9fa;
         }
+
         .container {
             max-width: 1000px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
+
         .left-column {
             background-color: #0d1b2a;
             color: #e0e1dd;
         }
+
         .right-column {
             background-color: #ffffff;
         }
+
         h1 {
             color: #0d1b2a;
             font-weight: 800;
             letter-spacing: -0.5px;
         }
+
         h2 {
             color: #1b263b;
             font-weight: 600;
@@ -36,6 +42,7 @@
             margin-top: 1.5rem;
             margin-bottom: 1rem;
         }
+
         .left-column h3 {
             color: #ffffff;
             font-weight: 600;
@@ -43,28 +50,34 @@
             border-bottom: 1px solid #415a77;
             padding-bottom: 4px;
         }
+
         .contact-icon {
             color: #778da9;
             width: 20px;
             text-align: center;
         }
+
         .job-title {
             color: #1b263b;
             font-weight: 600;
         }
+
         .company-name {
             color: #415a77;
             font-weight: 500;
         }
+
         .company-name a:hover {
             text-decoration: underline;
         }
+
         .bullet {
             color: #333;
             position: relative;
             padding-left: 1.5rem;
             margin-bottom: 0.5rem;
         }
+
         .bullet::before {
             content: '•';
             color: #415a77;
@@ -74,30 +87,31 @@
             left: 0;
             top: 0;
         }
-        .skill-bar-container {
-            width: 100%;
-            background-color: #415a77;
-            border-radius: 10px;
-            height: 8px;
-            overflow: hidden;
-        }
-        .skill-bar {
-            background-color: #a9d6e5;
-            height: 100%;
-            border-radius: 10px;
-            animation: fill-bar 1.5s ease-out forwards;
-        }
-        @keyframes fill-bar {
-            from { width: 0; }
-        }
+
         .skill-category {
             font-weight: 600;
             color: #a9d6e5;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(169, 214, 229, 0.3);
+            padding-bottom: 2px;
+            display: inline-block;
         }
-        .right-column-content p, .right-column-content li {
+
+        .skill-tag {
+            background-color: rgba(65, 90, 119, 0.6);
+            color: #e0e1dd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+        }
+
+        .right-column-content p,
+        .right-column-content li {
             font-size: 0.95rem;
         }
+
         .gemini-button {
             background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
             color: white;
@@ -107,136 +121,442 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             border: none;
             animation: pulse 2.5s infinite;
         }
+
         .gemini-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
             animation-play-state: paused;
         }
+
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
+
         /* Chat Modal Styles */
-        .chat-modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
-        .chat-modal-content { background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; height: 70vh; }
-        .chat-header { padding-bottom: 10px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
-        .chat-header h2 { margin: 0; border: none; font-size: 1.25rem; }
-        .chat-header-icons { display: flex; align-items: center; gap: 15px; }
-        .settings-icon, .close-button { color: #aaa; font-size: 20px; font-weight: bold; cursor: pointer; }
-        .chat-messages { flex-grow: 1; overflow-y: auto; padding: 10px 0; display: flex; flex-direction: column; gap: 12px; }
-        .message { padding: 10px 15px; border-radius: 18px; max-width: 80%; line-height: 1.4; }
-        .user-message { background-color: #415a77; color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
-        .ai-message { background-color: #f1f1f1; color: #333; align-self: flex-start; border-bottom-left-radius: 4px; }
-        .chat-input { display: flex; padding-top: 10px; border-top: 1px solid #ddd; }
-        .chat-input input { flex-grow: 1; border: 1px solid #ccc; padding: 10px; border-radius: 20px; margin-right: 10px; }
-        .chat-input button { background-color: #0d1b2a; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; transition: background-color 0.3s; }
-        .chat-input button:hover { background-color: #1b263b; }
-        #api-key-section { display: none; padding: 10px; background-color: #f9f9f9; border-bottom: 1px solid #ddd; }
-        #api-key-section input { width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; }
-        #api-key-section p { font-size: 0.8rem; color: #666; margin-top: 5px; }
-        
+        .chat-modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+        }
+
+        .chat-modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 70vh;
+        }
+
+        .chat-header {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h2 {
+            margin: 0;
+            border: none;
+            font-size: 1.25rem;
+        }
+
+        .chat-header-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .settings-icon,
+        .close-button {
+            color: #aaa;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message {
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+            line-height: 1.4;
+        }
+
+        .user-message {
+            background-color: #415a77;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .ai-message {
+            background-color: #f1f1f1;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-input {
+            display: flex;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        .chat-input button {
+            background-color: #0d1b2a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .chat-input button:hover {
+            background-color: #1b263b;
+        }
+
+        #api-key-section {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #api-key-section input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #api-key-section p {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
         /* Print-specific styles */
-        .print-only { display: none; }
+        .print-only {
+            display: none;
+        }
+
         @media print {
-            body { background-color: #ffffff; }
-            .container { display: block !important; box-shadow: none; }
-            .left-column, .right-column { display: block; width: 100%; }
-            .gemini-button { display: none; }
-            .print-only { display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background-color: #eef2f9; border-radius: 8px; border: 1px solid #d1d5db; margin-top: -1rem; margin-bottom: 1.5rem; }
-            .print-only p { margin: 0; font-size: 0.8rem; color: #1f2937; }
-            .print-only a { color: #1d4ed8; font-weight: 600; text-decoration: none; }
-            .print-only img { width: 75px; height: 75px; }
-            * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; }
+            body {
+                background-color: #ffffff;
+            }
+
+            .container {
+                display: block !important;
+                box-shadow: none;
+            }
+
+            .left-column,
+            .right-column {
+                display: block;
+                width: 100%;
+                height: 100%;
+                min-height: 100vh;
+            }
+
+            .gemini-button {
+                display: none;
+            }
+
+            /* Sidebar Print Styles */
+            .print-sidebar-header {
+                display: flex !important;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #415a77;
+            }
+
+            .print-sidebar-header img {
+                width: 120px;
+                height: 120px;
+                border: 4px solid white;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+            }
+
+            .print-sidebar-header p {
+                color: #e0e1dd;
+                font-size: 0.85rem;
+                margin: 0.25rem 0;
+            }
+
+            .print-sidebar-header a {
+                color: #a9d6e5;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 0.9rem;
+            }
+
+            /* Hide old print section if it still exists */
+            .right-column .print-only {
+                display: none !important;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
         }
     </style>
 </head>
+
 <body class="p-4 md:p-8">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 rounded-lg overflow-hidden">
         <!-- Left Column -->
         <div class="left-column p-6 md:p-8 flex flex-col">
+            <!-- Print-Only Sidebar Header (QR Code) -->
+            <div class="print-sidebar-header hidden">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ai-resume.com"
+                    alt="QR Code">
+                <p class="font-bold">View My Live Interactive CV</p>
+                <p>Scan the code or visit the link below for the full experience.</p>
+                <a href="https://ai-resume.com" target="_blank">ai-resume.com</a>
+            </div>
+
             <div class="flex-grow flex flex-col justify-around">
                 <!-- Section 1: Contact -->
                 <div>
                     <h3 class="text-xl">CONTACT</h3>
                     <div class="space-y-3 text-sm mt-4">
-                        <div class="flex items-center"><i class="fas fa-phone contact-icon mr-3"></i><span>0911 610 4306</span></div>
-                        <div class="flex items-center"><i class="fas fa-envelope contact-icon mr-3"></i><span>victorodutokun@gmail.com</span></div>
-                        <div class="flex items-center"><i class="fab fa-linkedin contact-icon mr-3"></i><a href="https://www.linkedin.com/in/victorodutokun/" target="_blank" class="hover:underline">linkedin/victor</a></div>
-                        <div class="flex items-center"><i class="fab fa-github contact-icon mr-3"></i><a href="https://github.com/ReXcelSp" target="_blank" class="hover:underline">github.com/ReXcelSp</a></div>
-                        <div class="flex items-center"><i class="fas fa-map-marker-alt contact-icon mr-3"></i><span>Lagos, Nigeria</span></div>
+                        <div class="flex items-center"><i class="fas fa-phone contact-icon mr-3"></i><span>0911 610
+                                4306</span></div>
+                        <div class="flex items-center"><i
+                                class="fas fa-envelope contact-icon mr-3"></i><span>victorodutokun@gmail.com</span>
+                        </div>
+                        <div class="flex items-center"><i class="fab fa-linkedin contact-icon mr-3"></i><a
+                                href="https://www.linkedin.com/in/victorodutokun/" target="_blank"
+                                class="hover:underline">linkedin/victor</a></div>
+                        <div class="flex items-center"><i class="fab fa-github contact-icon mr-3"></i><a
+                                href="https://github.com/ReXcelSp" target="_blank"
+                                class="hover:underline">github.com/ReXcelSp</a></div>
+                        <div class="flex items-center"><i
+                                class="fas fa-map-marker-alt contact-icon mr-3"></i><span>Lagos, Nigeria</span></div>
                     </div>
                 </div>
                 <!-- Section 2: Education -->
                 <div>
                     <h3 class="text-xl">EDUCATION</h3>
                     <div class="text-sm space-y-4 mt-4">
-                        <div><p class="font-semibold">Master of Business Administration (MBA)</p><p class="text-gray-300">Rome Business School</p><p class="text-gray-400 text-xs">2025 - 2026</p></div>
-                        <div><p class="font-semibold">Bachelor of Science, Mathematics & Statistics</p><p class="text-gray-300">University of Lagos</p><p class="text-gray-400 text-xs">2010 - 2015</p></div>
+                        <div>
+                            <p class="font-semibold">Master of Business Administration (MBA)</p>
+                            <p class="text-gray-300">Rome Business School</p>
+                            <p class="text-gray-400 text-xs">2025 - 2026</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Bachelor of Science, Mathematics & Statistics</p>
+                            <p class="text-gray-300">University of Lagos</p>
+                            <p class="text-gray-400 text-xs">2010 - 2015</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Section 3: Technical Skillset -->
                 <div>
                     <h3 class="text-xl">TECHNICAL SKILLSET</h3>
                     <div class="text-sm space-y-4 mt-4">
+                        <!-- Database -->
                         <div>
-                            <p class="skill-category">Data Science & ML</p>
-                            <div class="mt-2 space-y-3">
-                                <div><p class="font-semibold mb-1">Predictive Modeling</p><div class="skill-bar-container"><div class="skill-bar" style="width: 95%;"></div></div></div>
-                                <div><p class="font-semibold mb-1">Python (Pandas, Scikit-learn)</p><div class="skill-bar-container"><div class="skill-bar" style="width: 95%;"></div></div></div>
-                                <div><p class="font-semibold mb-1">Natural Language Processing (NLP)</p><div class="skill-bar-container"><div class="skill-bar" style="width: 80%;"></div></div></div>
+                            <p class="skill-category mb-2">Database</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">AWS Redshift</span>
+                                <span class="skill-tag">Snowflake</span>
+                                <span class="skill-tag">Google BigQuery</span>
+                                <span class="skill-tag">Google Cloud SQL</span>
+                                <span class="skill-tag">DBeaver</span>
+                                <span class="skill-tag">PostgreSQL</span>
                             </div>
                         </div>
+                        <!-- Data Engineering -->
                         <div>
-                            <p class="skill-category">Data Engineering</p>
-                            <div class="mt-2 space-y-3">
-                                <div><p class="font-semibold mb-1">SQL & Data Warehousing</p><div class="skill-bar-container"><div class="skill-bar" style="width: 98%;"></div></div></div>
-                                <div><p class="font-semibold mb-1">ETL Pipeline Development</p><div class="skill-bar-container"><div class="skill-bar" style="width: 90%;"></div></div></div>
+                            <p class="skill-category mb-2">Data Engineering</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">AWS S3</span>
+                                <span class="skill-tag">AWS Glue</span>
+                                <span class="skill-tag">AWS Lambda</span>
+                                <span class="skill-tag">AWS CloudWatch</span>
+                                <span class="skill-tag">Apache Airflow</span>
+                                <span class="skill-tag">DBT</span>
+                                <span class="skill-tag">ETL Pipelines</span>
                             </div>
                         </div>
+                        <!-- Machine Learning -->
                         <div>
-                            <p class="skill-category">BI, Visualization & Cloud</p>
-                             <div class="mt-2 space-y-3">
-                                <div><p class="font-semibold mb-1">Tableau / Power BI / Looker</p><div class="skill-bar-container"><div class="skill-bar" style="width: 90%;"></div></div></div>
-                                <div><p class="font-semibold mb-1">Cloud Platforms (AWS, GCP)</p><div class="skill-bar-container"><div class="skill-bar" style="width: 85%;"></div></div></div>
+                            <p class="skill-category mb-2">Machine Learning</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Python (Pandas, NumPy)</span>
+                                <span class="skill-tag">Scikit-learn</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">XGBoost</span>
+                                <span class="skill-tag">NLP</span>
+                                <span class="skill-tag">Predictive Modeling</span>
+                            </div>
+                        </div>
+                        <!-- Business Intelligence -->
+                        <div>
+                            <p class="skill-category mb-2">Business Intelligence</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">AWS QuickSight</span>
+                                <span class="skill-tag">Power BI</span>
+                                <span class="skill-tag">Tableau</span>
+                                <span class="skill-tag">Looker Studio</span>
+                                <span class="skill-tag">Google Looker</span>
+                            </div>
+                        </div>
+                        <!-- Languages -->
+                        <div>
+                            <p class="skill-category mb-2">Languages</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">SQL</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Section 4: Awards -->
                 <div>
-                     <h3 class="text-xl">AWARDS</h3>
-                    <div class="text-sm mt-4"><p class="font-semibold">Simply Excellent Award</p><p class="text-gray-300">Nielsen</p></div>
+                    <h3 class="text-xl">AWARDS</h3>
+                    <div class="text-sm mt-4">
+                        <p class="font-semibold">Simply Excellent Award</p>
+                        <p class="text-gray-300">Nielsen</p>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- Right Column -->
         <div class="right-column col-span-1 md:col-span-2 p-6 md:p-10 right-column-content">
             <header class="flex flex-col md:flex-row justify-between md:items-center mb-8 gap-4">
-                <div><h1 class="text-2xl">Victor Odutokun</h1><p class="text-lg text-gray-600 mt-1">Data & Analytics Leader | AI-Driven Business Impact</p></div>
-                <div><button id="openChatBtn" class="gemini-button whitespace-nowrap"><i class="fas fa-robot mr-2"></i> Chat with AI</button></div>
+                <div>
+                    <h1 class="text-2xl">Victor Odutokun</h1>
+                    <p class="text-lg text-gray-600 mt-1">Data & Analytics Leader | AI-Driven Business Impact</p>
+                </div>
+                <div><button id="openChatBtn" class="gemini-button whitespace-nowrap"><i class="fas fa-robot mr-2"></i>
+                        Chat with AI</button></div>
             </header>
             <!-- This section will ONLY appear on the PDF version -->
-            <div class="print-only">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=YOUR_LIVE_CV_URL_HERE" alt="QR Code to Interactive CV">
-                <div>
-                    <p class="font-bold">This is a static PDF version.</p>
-                    <p>For a full interactive experience, including a chat with my AI assistant, please view the live version of my CV by scanning the QR code or visiting:</p>
-                    <a href="YOUR_LIVE_CV_URL_HERE" target="_blank">your-live-cv-link.com</a>
-                </div>
-            </div>
-            <section><h2 class="text-2xl">PROFESSIONAL SUMMARY</h2><p class="text-gray-700 leading-relaxed">Results-oriented Data & Analytics Leader with 9 years of experience translating complex data into actionable business strategy and measurable impact. Expert in building and scaling data infrastructure, deploying predictive ML models, and championing data literacy to foster data-driven cultures. Proven ability to lead high-performing teams and deliver robust analytics solutions that drive revenue, improve efficiency, and enhance decision-making.</p></section>
+            <!-- Old print section removed -->
+            <section>
+                <h2 class="text-2xl">PROFESSIONAL SUMMARY</h2>
+                <p class="text-gray-700 leading-relaxed">Results-oriented Data & Analytics Leader with 9 years of
+                    experience translating complex data into actionable business strategy and measurable impact. Expert
+                    in building and scaling data infrastructure, deploying predictive ML models, and championing data
+                    literacy to foster data-driven cultures. Proven ability to lead high-performing teams and deliver
+                    robust analytics solutions that drive revenue, improve efficiency, and enhance decision-making.</p>
+            </section>
             <section>
                 <h2 class="text-2xl">PROFESSIONAL EXPERIENCE</h2>
                 <div class="space-y-6">
-                    <div><p class="job-title text-lg">Data Analytics & Engineering</p><p class="company-name"><a href="https://testlio.com/" target="_blank">Testlio</a> · (Remote)</p><p class="text-sm text-gray-500">Dec 2023 - Present</p><ul class="mt-2 space-y-2"><li class="bullet">Engineered and optimized robust, scalable ETL pipelines using SQL and Python on AWS Redshift, processing terabytes of data daily to support client-facing analytics and foundational ML model development.</li><li class="bullet">Developed an anomaly detection model to automatically flag critical software bugs from test logs, increasing bug detection accuracy by 25% and reducing manual review time by 40%.</li><li class="bullet">Architected and deployed interactive dashboards in Amazon QuickSight, providing actionable insights that drove a 15% improvement in client engagement metrics.</li></ul></div>
-                    <div><p class="job-title text-lg">Data and Analytics Lead</p><p class="company-name"><a href="https://www.achievetestprep.com/" target="_blank">Achieve Test Prep</a> · (Remote)</p><p class="text-sm text-gray-500">Nov 2021 - Dec 2022</p><ul class="mt-2 space-y-2"><li class="bullet">Designed and deployed a student success prediction model using logistic regression, identifying at-risk students with 85% accuracy and enabling proactive support that boosted course completion rates by 10%.</li><li class="bullet">Spearheaded the organization's data analytics strategy, championing data literacy and BI adoption which increased data-informed strategic decision-making by 50%.</li><li class="bullet">Launched a full-stack BI solution from scratch using Google BigQuery and Looker, cutting annual software licensing costs by 85% and improving report generation efficiency by over 80%.</li></ul></div>
-                    <div><p class="job-title text-lg">Specialist - Data Analytics and Market Intelligence</p><p class="company-name"><a href="https://www.dangote.com/" target="_blank">Dangote Industries Limited</a></p><p class="text-sm text-gray-500">Sep 2020 - Oct 2021</p><ul class="mt-2 space-y-2"><li class="bullet">Deployed a demand forecasting model using XGBoost that improved inventory management and reduced stockouts by 15%, saving an estimated $2M annually.</li><li class="bullet">Automated cross-functional business reporting, reducing manual effort by over 60 hours per week and and providing real-time insights to leadership.</li></ul></div>
-                    <div><p class="job-title text-lg">Data Science Manager</p><p class="company-name"><a href="https://www.nielsen.com/" target="_blank">Nielsen</a></p><p class="text-sm text-gray-500">Dec 2018 - Aug 2020</p><ul class="mt-2 space-y-2"><li class="bullet">Managed the end-to-end data science lifecycle for key market intelligence products, improving data quality and pipeline efficiency by 30% through methodological innovations.</li><li class="bullet">Employed robust statistical methods and liaised with Product teams to translate commercial needs into data-driven solutions, contributing to a 10% reduction in client turnover.</li></ul></div>
+                    <div>
+                        <p class="job-title text-lg">Data Analytics & Engineering</p>
+                        <p class="company-name"><a href="https://testlio.com/" target="_blank">Testlio</a> · (Remote)
+                        </p>
+                        <p class="text-sm text-gray-500">Dec 2023 - Present</p>
+                        <ul class="mt-2 space-y-2">
+                            <li class="bullet">Engineered and optimized robust, scalable ETL pipelines using SQL and
+                                Python on AWS Redshift, processing terabytes of data daily to support client-facing
+                                analytics and foundational ML model development.</li>
+                            <li class="bullet">Developed an anomaly detection model to automatically flag critical
+                                software bugs from test logs, increasing bug detection accuracy by 25% and reducing
+                                manual review time by 40%.</li>
+                            <li class="bullet">Architected and deployed interactive dashboards in Amazon QuickSight,
+                                providing actionable insights that drove a 15% improvement in client engagement metrics.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="job-title text-lg">Data and Analytics Lead</p>
+                        <p class="company-name"><a href="https://www.achievetestprep.com/" target="_blank">Achieve Test
+                                Prep</a> · (Remote)</p>
+                        <p class="text-sm text-gray-500">Nov 2021 - Dec 2022</p>
+                        <ul class="mt-2 space-y-2">
+                            <li class="bullet">Designed and deployed a student success prediction model using logistic
+                                regression, identifying at-risk students with 85% accuracy and enabling proactive
+                                support that boosted course completion rates by 10%.</li>
+                            <li class="bullet">Spearheaded the organization's data analytics strategy, championing data
+                                literacy and BI adoption which increased data-informed strategic decision-making by 50%.
+                            </li>
+                            <li class="bullet">Launched a full-stack BI solution from scratch using Google BigQuery and
+                                Looker, cutting annual software licensing costs by 85% and improving report generation
+                                efficiency by over 80%.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="job-title text-lg">Specialist - Data Analytics and Market Intelligence</p>
+                        <p class="company-name"><a href="https://www.dangote.com/" target="_blank">Dangote Industries
+                                Limited</a></p>
+                        <p class="text-sm text-gray-500">Sep 2020 - Oct 2021</p>
+                        <ul class="mt-2 space-y-2">
+                            <li class="bullet">Deployed a demand forecasting model using XGBoost that improved inventory
+                                management and reduced stockouts by 15%, saving an estimated $2M annually.</li>
+                            <li class="bullet">Automated cross-functional business reporting, reducing manual effort by
+                                over 60 hours per week and and providing real-time insights to leadership.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="job-title text-lg">Data Science Manager</p>
+                        <p class="company-name"><a href="https://www.nielsen.com/" target="_blank">Nielsen</a></p>
+                        <p class="text-sm text-gray-500">Dec 2018 - Aug 2020</p>
+                        <ul class="mt-2 space-y-2">
+                            <li class="bullet">Managed the end-to-end data science lifecycle for key market intelligence
+                                products, improving data quality and pipeline efficiency by 30% through methodological
+                                innovations.</li>
+                            <li class="bullet">Employed robust statistical methods and liaised with Product teams to
+                                translate commercial needs into data-driven solutions, contributing to a 10% reduction
+                                in client turnover.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </div>
@@ -253,10 +573,13 @@
             </div>
             <div id="api-key-section">
                 <input type="password" id="apiKeyInput" placeholder="Enter your Gemini API Key">
-                <p>Get a free key from <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-blue-500 hover:underline">Google AI Studio</a>.</p>
+                <p>Get a free key from <a href="https://aistudio.google.com/app/apikey" target="_blank"
+                        class="text-blue-500 hover:underline">Google AI Studio</a>.</p>
             </div>
             <div class="chat-messages" id="chatMessages">
-                 <div class="message ai-message">Hello! I'm Victor's AI assistant. Ask me anything about his skills or experience. To enable this chat, please enter a Gemini API key in the settings (<i class="fas fa-cog"></i>).</div>
+                <div class="message ai-message">Hello! I'm Victor's AI assistant. Ask me anything about his skills or
+                    experience. To enable this chat, please enter a Gemini API key in the settings (<i
+                        class="fas fa-cog"></i>).</div>
             </div>
             <div class="chat-input">
                 <input type="text" id="userInput" placeholder="Ask a question...">
@@ -311,9 +634,11 @@
             - Nielsen: Data Science Manager. Managed data science lifecycle, reducing client turnover by 10%.
 
             Skills:
-            - Data Science: Predictive Modeling, Python (Pandas, Scikit-learn), NLP
-            - Data Engineering: SQL, Data Warehousing, ETL Development
-            - BI & Cloud: Tableau, Power BI, Looker, AWS, GCP
+            - Database: AWS Redshift, Snowflake, Google BigQuery, Google Cloud SQL, DBeaver, PostgreSQL
+            - Data Engineering: AWS S3, AWS Glue, AWS Lambda, AWS CloudWatch, Apache Airflow, DBT, ETL Pipelines
+            - Machine Learning: Python (Pandas, NumPy), Scikit-learn, TensorFlow, PyTorch, XGBoost, NLP, Predictive Modeling
+            - Business Intelligence: AWS QuickSight, Power BI, Tableau, Looker Studio, Google Looker
+            - Languages: Python, SQL
         `;
 
         async function sendMessage() {
@@ -327,8 +652,8 @@
             }
 
             appendMessage(messageText, 'user');
-userInput.value = '';
-            
+            userInput.value = '';
+
             appendMessage('Thinking...', 'ai', true);
 
             try {
@@ -354,8 +679,8 @@ userInput.value = '';
         }
 
         async function getGeminiResponse(prompt, apiKey) {
-             const fullPrompt = `${cvContext}\n\nRecruiter's Question: "${prompt}"\n\nYour Answer:`;
-            
+            const fullPrompt = `${cvContext}\n\nRecruiter's Question: "${prompt}"\n\nYour Answer:`;
+
             let chatHistory = [];
             chatHistory.push({ role: "user", parts: [{ text: fullPrompt }] });
             const payload = { contents: chatHistory };
@@ -385,4 +710,5 @@ userInput.value = '';
 
     </script>
 </body>
+
 </html>
