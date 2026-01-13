@@ -163,7 +163,7 @@
         <mxCell id="WQ0ekFgficLk0UK64ZQ5-63" parent="WIyWlLk6GJQsqaUBKTNV-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;labelBackgroundColor=none;fontSize=15;rotation=-90;" value="AI ENHANCEMENT" vertex="1">
           <mxGeometry height="30" width="160" x="150" y="820" as="geometry" />
         </mxCell>
-        <mxCell id="WQ0ekFgficLk0UK64ZQ5-64" parent="WIyWlLk6GJQsqaUBKTNV-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;labelBackgroundColor=none;fontSize=15;rotation=-90;" value="AI ENHANCEMENT" vertex="1">
+        <mxCell id="WQ0ekFgficLk0UK64ZQ5-64" parent="WIyWlLk6GJQsqaUBKTNV-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;labelBackgroundColor=none;fontSize=15;rotation=-90;" value="HUMAN LOOP" vertex="1">
           <mxGeometry height="30" width="160" x="150" y="1025.5" as="geometry" />
         </mxCell>
         <mxCell id="WQ0ekFgficLk0UK64ZQ5-66" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" style="endArrow=classic;html=1;rounded=0;entryX=0.432;entryY=-0.026;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;flowAnimation=1;dashPattern=1 4;strokeWidth=2;strokeColor=light-dark(#000000,#990000);" target="WQ0ekFgficLk0UK64ZQ5-44" value="">
@@ -200,12 +200,6 @@
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="1019.25" y="965.69" as="sourcePoint" />
             <mxPoint x="1020" y="840" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="A1j2GfdC0WnP7PKKID5l-5" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" style="endArrow=none;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="850" y="790" as="sourcePoint" />
-            <mxPoint x="900" y="740" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="A1j2GfdC0WnP7PKKID5l-6" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" style="endArrow=classic;html=1;rounded=0;endFill=1;flowAnimation=1;" value="">
