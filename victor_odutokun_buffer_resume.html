@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Victor Odutokun - Senior Data Scientist</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+                rel="stylesheet">
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                }
+
+                body {
+                        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                        font-size: 13px;
+                        line-height: 1.55;
+                        color: #1a1a2e;
+                        background: #f8f9fa;
+                }
+
+                .resume {
+                        max-width: 8.5in;
+                        margin: 0 auto;
+                        background: white;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                        padding: 0.6in 0.7in;
+                }
+
+                /* Header */
+                .header {
+                        text-align: center;
+                        margin-bottom: 22px;
+                        padding-bottom: 16px;
+                        border-bottom: 2px solid #0d1b2a;
+                }
+
+                .name {
+                        font-size: 32px;
+                        font-weight: 800;
+                        color: #0d1b2a;
+                        letter-spacing: -0.5px;
+                        margin-bottom: 5px;
+                }
+
+                .title {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #415a77;
+                        margin-bottom: 10px;
+                }
+
+                .contact {
+                        font-size: 12px;
+                        color: #555;
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        gap: 16px;
+                }
+
+                .contact a {
+                        color: #415a77;
+                        text-decoration: none;
+                }
+
+                .contact a:hover {
+                        text-decoration: underline;
+                }
+
+                /* Sections */
+                .section {
+                        margin-bottom: 20px;
+                }
+
+                .section-title {
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: #0d1b2a;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        border-bottom: 2px solid #415a77;
+                        padding-bottom: 5px;
+                        margin-bottom: 12px;
+                }
+
+                /* Impact Panel */
+                .impact-panel {
+                        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+                        color: white;
+                        padding: 16px 20px;
+                        border-radius: 8px;
+                        margin-bottom: 22px;
+                }
+
+                .impact-panel .section-title {
+                        color: #a9d6e5;
+                        border-bottom-color: #415a77;
+                        margin-bottom: 12px;
+                }
+
+                .impact-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 10px 24px;
+                }
+
+                .impact-item {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 8px;
+                }
+
+                .impact-icon {
+                        color: #00f2fe;
+                        font-weight: bold;
+                        flex-shrink: 0;
+                }
+
+                .impact-text {
+                        font-size: 12px;
+                        line-height: 1.45;
+                }
+
+                .impact-number {
+                        font-weight: 700;
+                        color: #a9d6e5;
+                }
+
+                /* Summary */
+                .summary {
+                        font-size: 13px;
+                        color: #333;
+                        line-height: 1.6;
+                        margin-bottom: 18px;
+                }
+
+                /* Experience */
+                .job {
+                        margin-bottom: 18px;
+                }
+
+                .job-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        margin-bottom: 4px;
+                }
+
+                .job-title {
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: #1b263b;
+                }
+
+                .job-date {
+                        font-size: 12px;
+                        color: #666;
+                        font-weight: 500;
+                }
+
+                .job-company {
+                        font-size: 13px;
+                        color: #415a77;
+                        font-weight: 600;
+                        margin-bottom: 8px;
+                }
+
+                .job-company a {
+                        color: #415a77;
+                        text-decoration: none;
+                }
+
+                .job-company a:hover {
+                        text-decoration: underline;
+                }
+
+                .job-bullets {
+                        list-style: none;
+                        padding-left: 0;
+                }
+
+                .job-bullets li {
+                        position: relative;
+                        padding-left: 16px;
+                        margin-bottom: 6px;
+                        font-size: 12.5px;
+                        line-height: 1.55;
+                }
+
+                .job-bullets li::before {
+                        content: '▸';
+                        position: absolute;
+                        left: 0;
+                        color: #415a77;
+                        font-size: 11px;
+                }
+
+                /* Technical Skills */
+                .skills-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 12px;
+                }
+
+                .skill-category {
+                        margin-bottom: 10px;
+                }
+
+                .skill-label {
+                        font-size: 12px;
+                        font-weight: 700;
+                        color: #0d1b2a;
+                        margin-bottom: 4px;
+                }
+
+                .skill-tags {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 5px;
+                }
+
+                .skill-tag {
+                        background: #e8eef4;
+                        color: #1b263b;
+                        padding: 3px 10px;
+                        border-radius: 3px;
+                        font-size: 11px;
+                        font-weight: 500;
+                }
+
+                .skill-tag.primary {
+                        background: #0d1b2a;
+                        color: white;
+                }
+
+                /* Education */
+                .education-item {
+                        margin-bottom: 10px;
+                }
+
+                .edu-degree {
+                        font-weight: 700;
+                        font-size: 13px;
+                        color: #1b263b;
+                }
+
+                .edu-school {
+                        font-size: 12px;
+                        color: #555;
+                }
+
+                .edu-date {
+                        font-size: 11px;
+                        color: #888;
+                }
+
+                /* Awards */
+                .award {
+                        font-size: 12px;
+                }
+
+                .award-name {
+                        font-weight: 600;
+                        color: #1b263b;
+                }
+
+                .award-org {
+                        color: #666;
+                }
+
+                /* Side Projects */
+                .project-url {
+                        font-size: 11px;
+                        color: #415a77;
+                        margin-bottom: 6px;
+                }
+
+                .project-url a {
+                        color: #415a77;
+                        text-decoration: none;
+                }
+
+                .project-url a:hover {
+                        text-decoration: underline;
+                }
+
+                /* Print styles */
+                @media print {
+                        body {
+                                background: white;
+                        }
+
+                        .resume {
+                                box-shadow: none;
+                                padding: 0.4in 0.5in;
+                        }
+
+                        * {
+                                -webkit-print-color-adjust: exact !important;
+                                print-color-adjust: exact !important;
+                        }
+                }
+
+                @page {
+                        size: letter;
+                        margin: 0;
+                }
+        </style>
+</head>
+
+<body>
+        <div class="resume">
+                <header class="header">
+                        <h1 class="name">VICTOR ODUTOKUN</h1>
+                        <p class="title">Senior Data Scientist | SaaS Analytics & Machine Learning</p>
+                        <div class="contact">
+                                <span>📧 victorodutokun@gmail.com</span>
+                                <span>📍 Lagos, Nigeria (CET +1)</span>
+                                <span>🔗 <a
+                                                href="https://www.linkedin.com/in/victorodutokun/">linkedin.com/in/victorodutokun</a></span>
+                                <span>💻 <a href="https://github.com/ReXcelSp">github.com/ReXcelSp</a></span>
+                        </div>
+                </header>
+
+                <!-- Recent Career Highlights -->
+                <div class="impact-panel">
+                        <h2 class="section-title">Recent Career Highlights</h2>
+                        <div class="impact-grid">
+                                <div class="impact-item">
+                                        <span class="impact-icon">▸</span>
+                                        <span class="impact-text"><span class="impact-number">650+ commits</span> to
+                                                production QuickSight analytics layer as 2nd highest contributor</span>
+                                </div>
+                                <div class="impact-item">
+                                        <span class="impact-icon">▸</span>
+                                        <span class="impact-text"><span class="impact-number">20% reduction</span> in
+                                                escaped issues through root-cause analysis</span>
+                                </div>
+                                <div class="impact-item">
+                                        <span class="impact-icon">▸</span>
+                                        <span class="impact-text"><span class="impact-number">A/B experiment
+                                                        framework</span> to measure generative AI feature impact</span>
+                                </div>
+                                <div class="impact-item">
+                                        <span class="impact-icon">▸</span>
+                                        <span class="impact-text"><span class="impact-number">K-means
+                                                        segmentation</span> model for behavioral persona
+                                                clustering</span>
+                                </div>
+                                <div class="impact-item">
+                                        <span class="impact-icon">▸</span>
+                                        <span class="impact-text"><span class="impact-number">Self-serve
+                                                        dashboards</span> that cut ad-hoc requests by <span
+                                                        class="impact-number">70%+</span> across 15+ teams</span>
+                                </div>
+                                <div class="impact-item">
+                                        <span class="impact-icon">▸</span>
+                                        <span class="impact-text"><span class="impact-number">Full ELT pipelines</span>
+                                                built with Airflow, Glue, and Redshift</span>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- Summary -->
+                <section class="section">
+                        <p class="summary">
+                                <strong>Data Scientist and Analytics Leader</strong> with 9+ years of experience helping
+                                SaaS and product-led companies make better decisions with data. I build models that
+                                cover the full customer journey, from acquisition to retention to monetization. I also
+                                design experiments, scale analytics infrastructure, and create self-serve BI tools that
+                                let teams move faster without waiting on data requests.
+                        </p>
+                </section>
+
+                <!-- Experience -->
+                <section class="section">
+                        <h2 class="section-title">Professional Experience</h2>
+
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Analytics Engineer</span>
+                                        <span class="job-date">Dec 2023 - Dec 2025</span>
+                                </div>
+                                <div class="job-company"><a href="https://testlio.com" target="_blank">Testlio</a> ·
+                                        Remote (SaaS QA Platform, 200+ employees)</div>
+                                <ul class="job-bullets">
+                                        <li>Worked as the go-to Data Scientist for product, growth, and ops teams. Took
+                                                vague business questions and turned them into clear analyses that
+                                                actually informed decisions.</li>
+                                        <li>Made <strong>650+ commits</strong> to our QuickSight analytics layer (2nd
+                                                highest contributor). Built dashboards for churn, engagement, MRR
+                                                cohorts, and NPS that stakeholders across <strong>15+ teams</strong>
+                                                could use without asking for help.</li>
+                                        <li>Ran a correlation analysis to figure out why bugs were escaping testing.
+                                                Found process gaps that were hurting client trust. After we fixed them,
+                                                escaped issues dropped by <strong>20%</strong>.</li>
+                                        <li>Built and maintained dbt models that transformed raw event data into usable
+                                                business metrics like engagement scores, subscription health, and
+                                                revenue attribution in Redshift.</li>
+                                        <li>Set up an A/B experiment framework to test whether our generative AI feature
+                                                actually helped testers write better bug reports. Tracked edit velocity,
+                                                approval rates, and resolution time.</li>
+                                        <li>Built a K-means clustering model to segment users into personas, which
+                                                improved our matching algorithms and made operations more efficient.
+                                        </li>
+                                        <li>Helped orchestrate ELT pipelines in Airflow, coordinating Glue crawlers,
+                                                data lake jobs, dbt runs, and QuickSight refreshes.</li>
+                                </ul>
+                        </div>
+
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Data and Analytics Lead</span>
+                                        <span class="job-date">Nov 2021 - Dec 2022</span>
+                                </div>
+                                <div class="job-company"><a href="https://www.achievetestprep.com"
+                                                target="_blank">Achieve Test Prep</a> · Remote (EdTech)</div>
+                                <ul class="job-bullets">
+                                        <li>Built a logistic regression model to predict which students were likely to
+                                                drop out. It was <strong>85% accurate</strong>, and the interventions it
+                                                enabled boosted course completion by <strong>10%</strong>.</li>
+                                        <li>Launched the company's first real BI stack (BigQuery + Looker) from scratch.
+                                                Replaced clunky legacy tools, cut licensing costs by
+                                                <strong>85%</strong>, and made reporting <strong>80% faster</strong>.
+                                        </li>
+                                        <li>Got people across the org to actually use data. Ran training sessions and
+                                                built accessible dashboards. Data-driven decision making went up by
+                                                <strong>50%</strong>.
+                                        </li>
+                                </ul>
+                        </div>
+
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Specialist, Data Analytics & Market Intelligence</span>
+                                        <span class="job-date">Sep 2020 - Oct 2021</span>
+                                </div>
+                                <div class="job-company"><a href="https://www.dangote.com" target="_blank">Dangote
+                                                Industries Limited</a> · Lagos, Nigeria</div>
+                                <ul class="job-bullets">
+                                        <li>Built an XGBoost demand forecasting model that helped plan inventory better.
+                                                Stockouts dropped by <strong>15%</strong>, which saved a lot of money in
+                                                supply chain costs.</li>
+                                        <li>Automated the cross-functional business reports that people were building
+                                                manually. Saved over <strong>60 hours per week</strong> and gave
+                                                leadership real-time visibility.</li>
+                                </ul>
+                        </div>
+
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Data Science Manager</span>
+                                        <span class="job-date">Dec 2018 - Aug 2020</span>
+                                </div>
+                                <div class="job-company"><a href="https://www.nielsen.com" target="_blank">Nielsen</a> ·
+                                        Lagos, Nigeria</div>
+                                <ul class="job-bullets">
+                                        <li>Ran the full data science lifecycle for our market intelligence products.
+                                                Improved data quality and pipeline efficiency by <strong>30%</strong>
+                                                through better processes.</li>
+                                        <li>Worked closely with Product to translate what clients needed into
+                                                statistical solutions. Helped reduce client churn by
+                                                <strong>10%</strong>.
+                                        </li>
+                                </ul>
+                        </div>
+
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Earlier Roles</span>
+                                        <span class="job-date">2015 - 2018</span>
+                                </div>
+                                <div class="job-company">Built my foundation in data analytics and statistical analysis
+                                </div>
+                        </div>
+                </section>
+
+                <!-- Technical Skills -->
+                <section class="section">
+                        <h2 class="section-title">Technical Expertise</h2>
+                        <div class="skills-grid">
+                                <div class="skill-category">
+                                        <div class="skill-label">Data Warehousing & SQL</div>
+                                        <div class="skill-tags">
+                                                <span class="skill-tag primary">AWS Redshift</span>
+                                                <span class="skill-tag primary">Google BigQuery</span>
+                                                <span class="skill-tag">Snowflake</span>
+                                                <span class="skill-tag">PostgreSQL</span>
+                                        </div>
+                                </div>
+                                <div class="skill-category">
+                                        <div class="skill-label">Data Transformation</div>
+                                        <div class="skill-tags">
+                                                <span class="skill-tag primary">dbt</span>
+                                                <span class="skill-tag primary">SQL</span>
+                                                <span class="skill-tag primary">Python</span>
+                                        </div>
+                                </div>
+                                <div class="skill-category">
+                                        <div class="skill-label">Orchestration & ETL</div>
+                                        <div class="skill-tags">
+                                                <span class="skill-tag primary">Apache Airflow</span>
+                                                <span class="skill-tag">AWS Glue</span>
+                                                <span class="skill-tag">AWS Lambda</span>
+                                                <span class="skill-tag">S3</span>
+                                        </div>
+                                </div>
+                                <div class="skill-category">
+                                        <div class="skill-label">Business Intelligence</div>
+                                        <div class="skill-tags">
+                                                <span class="skill-tag primary">AWS QuickSight</span>
+                                                <span class="skill-tag primary">Google Looker</span>
+                                                <span class="skill-tag">Tableau</span>
+                                                <span class="skill-tag">Power BI</span>
+                                        </div>
+                                </div>
+                                <div class="skill-category">
+                                        <div class="skill-label">Data Science & ML</div>
+                                        <div class="skill-tags">
+                                                <span class="skill-tag primary">Pandas</span>
+                                                <span class="skill-tag primary">Scikit-learn</span>
+                                                <span class="skill-tag">K-Means</span>
+                                                <span class="skill-tag">XGBoost</span>
+                                                <span class="skill-tag">A/B Testing</span>
+                                                <span class="skill-tag">Causal Inference</span>
+                                        </div>
+                                </div>
+                                <div class="skill-category">
+                                        <div class="skill-label">AI-Assisted Tools</div>
+                                        <div class="skill-tags">
+                                                <span class="skill-tag primary">OpenAI API</span>
+                                                <span class="skill-tag">Generative AI Evaluation</span>
+                                                <span class="skill-tag">NLP</span>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+
+                <!-- Education -->
+                <section class="section">
+                        <h2 class="section-title">Education</h2>
+                        <div class="education-item">
+                                <div class="edu-degree">Master of Business Administration (MBA)</div>
+                                <div class="edu-school">Rome Business School</div>
+                                <div class="edu-date">2025 - 2026 (In Progress)</div>
+                        </div>
+                        <div class="education-item">
+                                <div class="edu-degree">Bachelor of Science, Mathematics & Statistics</div>
+                                <div class="edu-school">University of Lagos</div>
+                                <div class="edu-date">2010 - 2015</div>
+                        </div>
+                </section>
+
+                <!-- Awards -->
+                <section class="section">
+                        <h2 class="section-title">Recognition</h2>
+                        <div class="award">
+                                <span class="award-name">Simply Excellent Award</span>, <span
+                                        class="award-org">Nielsen</span>
+                        </div>
+                </section>
+
+                <!-- Side Projects -->
+                <section class="section">
+                        <h2 class="section-title">Side Projects</h2>
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title"><a href="https://www.prudentme.com"
+                                                        target="_blank">PrudentMe</a>: AI-Powered Personal Finance
+                                                App</span>
+                                </div>
+                                <ul class="job-bullets">
+                                        <li>I'm building a personal finance app that answers "where did my money go?" It
+                                                connects to Nigerian banks via Mono API and uses <strong>OpenAI
+                                                        GPT-4</strong> to categorize transactions automatically, no
+                                                manual tagging needed.</li>
+                                        <li>The AI learns from user feedback over time, getting smarter with each
+                                                correction. This project shows I can ship end-to-end data products from
+                                                idea to production.</li>
+                                </ul>
+                        </div>
+                </section>
+        </div>
+</body>
+
+</html>
