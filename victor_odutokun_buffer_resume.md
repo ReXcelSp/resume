@@ -12,6 +12,7 @@
 | ▸ **650+ commits** to production QuickSight analytics layer as 2nd highest contributor | ▸ **20% reduction** in escaped issues through root-cause analysis |
 | ▸ **A/B experiment framework** to measure generative AI feature impact | ▸ **K-means segmentation** model for behavioral persona clustering |
 | ▸ **Self-serve dashboards** that cut ad-hoc requests by **70%+** across 15+ teams | ▸ **Full ELT pipelines** built with Airflow, Glue, and Redshift |
+| ▸ **Shipped AI product**: [PrudentMe](https://www.prudentme.com) uses GPT-4 for smart transaction categorization | |
 
 ---
 
