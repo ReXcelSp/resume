@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Victor Odutokun - Operations and Automation specialist | AI Engineer</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+                rel="stylesheet">
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                }
+
+                body {
+                        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                        font-size: 12.5px;
+                        line-height: 1.45;
+                        color: #1a1a2e;
+                        background: #f8f9fa;
+                }
+
+                .resume {
+                        max-width: 210mm;
+                        /* A4 width */
+                        margin: 0 auto;
+                        background: white;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                        padding: 15mm 18mm;
+                }
+
+                /* Header */
+                .header {
+                        text-align: center;
+                        margin-bottom: 14px;
+                        padding-bottom: 10px;
+                        border-bottom: 2px solid #0d1b2a;
+                }
+
+                .name {
+                        font-size: 28px;
+                        font-weight: 800;
+                        color: #0d1b2a;
+                        letter-spacing: -0.5px;
+                        margin-bottom: 4px;
+                }
+
+                .title {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #415a77;
+                        margin-bottom: 6px;
+                }
+
+                .contact {
+                        font-size: 11.5px;
+                        color: #555;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 16px;
+                }
+
+                .contact-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                }
+
+                .contact a {
+                        color: #415a77;
+                        text-decoration: none;
+                }
+
+                .contact a:hover {
+                        text-decoration: underline;
+                }
+
+                .icon {
+                        width: 14px;
+                        height: 14px;
+                        stroke: currentColor;
+                        stroke-width: 2;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        fill: none;
+                }
+
+                /* Sections */
+                .section {
+                        margin-bottom: 12px;
+                        page-break-inside: auto;
+                }
+
+                .section-title {
+                        font-size: 12.5px;
+                        font-weight: 700;
+                        color: #0d1b2a;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        border-bottom: 1px solid #cbd5e1;
+                        padding-bottom: 4px;
+                        margin-bottom: 8px;
+                        page-break-after: avoid;
+                        /* Don't break right after an h2 */
+                }
+
+                /* Impact Panel - Print Safe */
+                .impact-panel {
+                        background: #f8fafc;
+                        border: 1px solid #e2e8f0;
+                        padding: 10px 14px;
+                        border-radius: 6px;
+                        margin-bottom: 12px;
+                        page-break-inside: avoid;
+                }
+
+                .impact-panel .section-title {
+                        border-bottom: none;
+                        margin-bottom: 6px;
+                        padding-bottom: 0;
+                        color: #0f172a;
+                        font-size: 11.5px;
+                }
+
+                .impact-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 8px 16px;
+                }
+
+                .impact-item {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 6px;
+                }
+
+                .impact-icon {
+                        color: #415a77;
+                        flex-shrink: 0;
+                }
+
+                .impact-text {
+                        font-size: 11px;
+                        line-height: 1.4;
+                        color: #334155;
+                }
+
+                .impact-number {
+                        font-weight: 700;
+                        color: #0f172a;
+                }
+
+                /* Summary */
+                .summary {
+                        font-size: 12px;
+                        color: #333;
+                        line-height: 1.55;
+                        margin-bottom: 12px;
+                }
+
+                /* Experience & Projects */
+                .job {
+                        margin-bottom: 12px;
+                        page-break-inside: auto;
+                        break-inside: auto;
+                }
+
+                .job-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        margin-bottom: 3px;
+                        page-break-after: avoid;
+                        break-after: avoid;
+                }
+
+                .job-title {
+                        font-size: 12.5px;
+                        font-weight: 700;
+                        color: #1b263b;
+                }
+
+                .job-date {
+                        font-size: 11px;
+                        color: #666;
+                        font-weight: 500;
+                }
+
+                .job-company {
+                        font-size: 12px;
+                        color: #415a77;
+                        font-weight: 600;
+                        margin-bottom: 6px;
+                        page-break-after: avoid;
+                        break-after: avoid;
+                }
+
+                .job-company a,
+                .project-link {
+                        color: #415a77;
+                        text-decoration: none;
+                }
+
+                .job-company a:hover,
+                .project-link:hover {
+                        text-decoration: underline;
+                }
+
+                .project-links {
+                        font-size: 11px;
+                        margin-left: 8px;
+                        font-weight: 500;
+                }
+
+                .job-bullets {
+                        list-style: none;
+                        padding-left: 0;
+                }
+
+                .job-bullets li {
+                        position: relative;
+                        padding-left: 16px;
+                        margin-bottom: 5px;
+                        font-size: 11.5px;
+                        line-height: 1.5;
+                        color: #334155;
+                        page-break-inside: avoid;
+                        break-inside: avoid;
+                }
+
+                .job-bullets li::before {
+                        content: '';
+                        position: absolute;
+                        left: 2px;
+                        top: 6px;
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 50%;
+                        background-color: #64748b;
+                }
+
+                /* Technical Skills */
+                .skills-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 12px;
+                        page-break-inside: avoid;
+                }
+
+                .skill-category {
+                        margin-bottom: 6px;
+                }
+
+                .skill-label {
+                        font-size: 11px;
+                        font-weight: 700;
+                        color: #0f172a;
+                        margin-bottom: 4px;
+                }
+
+                .skill-tags {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 4px;
+                }
+
+                .skill-tag {
+                        background: #f1f5f9;
+                        border: 1px solid #e2e8f0;
+                        color: #334155;
+                        padding: 2px 6px;
+                        border-radius: 3px;
+                        font-size: 10px;
+                        font-weight: 500;
+                }
+
+                /* Education */
+                .education-item {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 4px;
+                        page-break-inside: avoid;
+                }
+
+                .edu-degree {
+                        font-weight: 600;
+                        font-size: 11.5px;
+                        color: #1b263b;
+                }
+
+                .edu-school {
+                        color: #475569;
+                }
+
+                .edu-date {
+                        font-size: 11px;
+                        color: #64748b;
+                }
+
+                /* Print styles */
+                @media print {
+                        body {
+                                background: white;
+                                /* Ensure text is selectable in the generated PDF */
+                                -webkit-user-select: text !important;
+                                user-select: text !important;
+                        }
+
+                        .resume {
+                                box-shadow: none;
+                                /* Critical: Retain padding to keep text off the edge, even if @page margin is 0 */
+                                padding: 15mm 18mm !important;
+                                max-width: 100%;
+                        }
+
+                        * {
+                                -webkit-print-color-adjust: exact !important;
+                                print-color-adjust: exact !important;
+                        }
+
+                        a,
+                        a:link,
+                        a:visited {
+                                text-decoration: none !important;
+                                color: #415a77 !important;
+                                /* Critical: Ensures links remain clickable HTML entities rather than rendered shapes */
+                                pointer-events: auto !important;
+                        }
+                }
+
+                @page {
+                        size: A4;
+                        /* The 0 margin prevents the browser from injecting its default headers (timestamps) and footers (URLs) */
+                        margin: 0;
+                }
+        </style>
+</head>
+
+<body>
+        <div class="resume">
+                <header class="header">
+                        <h1 class="name">VICTOR ODUTOKUN</h1>
+                        <p class="title">Operations and Automation specialist | AI Engineer</p>
+                        <div class="contact">
+                                <span class="contact-item">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                                <path
+                                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                </path>
+                                                <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                        <a href="mailto:victorodutokun@gmail.com">victorodutokun@gmail.com</a>
+                                </span>
+                                <span class="contact-item">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        Lagos, Nigeria (WAT / UTC+1)
+                                </span>
+                                <span class="contact-item">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                                <path
+                                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                                </path>
+                                                <rect x="2" y="9" width="4" height="12"></rect>
+                                                <circle cx="4" cy="4" r="2"></circle>
+                                        </svg>
+                                        <a
+                                                href="https://www.linkedin.com/in/victorodutokun/">linkedin.com/in/victorodutokun</a>
+                                </span>
+                                <span class="contact-item">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                                <path
+                                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                                </path>
+                                        </svg>
+                                        <a href="https://github.com/ReXcelSp">github.com/ReXcelSp</a>
+                                </span>
+                        </div>
+                </header>
+
+                <!-- Impact Highlights -->
+                <div class="impact-panel">
+                        <h2 class="section-title">Career Impact & Tools</h2>
+                        <div class="impact-grid">
+                                <div class="impact-item">
+                                        <svg class="icon impact-icon" viewBox="0 0 24 24">
+                                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                        </svg>
+                                        <span class="impact-text"><span class="impact-number">Internal
+                                                        automation:</span> Built Google Apps Script pipelines that
+                                                handled alerts for 200+ employees and completely eliminated manual
+                                                tracking delays.</span>
+                                </div>
+                                <div class="impact-item">
+                                        <svg class="icon impact-icon" viewBox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                                <path
+                                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                                </path>
+                                        </svg>
+                                        <span class="impact-text"><span class="impact-number">Self-serve systems:</span>
+                                                Cut volume of ad-hoc requests by 70% by building data models that 15
+                                                teams could use independently.</span>
+                                </div>
+                                <div class="impact-item">
+                                        <svg class="icon impact-icon" viewBox="0 0 24 24">
+                                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                        </svg>
+                                        <span class="impact-text"><span class="impact-number">AI tools shipped:</span>
+                                                Wrote and deployed an OpenAI fintech integration, a Gemini API job
+                                                tracker, and an OpenClaw text assistant.</span>
+                                </div>
+                                <div class="impact-item">
+                                        <svg class="icon impact-icon" viewBox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12 6 12 12 16 14"></polyline>
+                                        </svg>
+                                        <span class="impact-text"><span class="impact-number">Process efficiency:</span>
+                                                Automated complex reporting processes, directly saving finance and
+                                                operations teams over 60 manual hours per week.</span>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- Summary -->
+                <section class="section">
+                        <p class="summary">
+                                <strong>Systems builder and operator</strong> with 9 years of experience designing
+                                internal tools, automating routine workloads, and building operating systems that help
+                                teams work faster. I own company platforms from end to end — evaluating tools, writing
+                                automation scripts, creating self-serve reporting, and documenting rules to scale
+                                transparency. My core focus is adopting practical AI and automation tools to remove
+                                friction across distributed environments.
+                        </p>
+                </section>
+
+                <!-- AI & Automation Projects Top Section -->
+                <section class="section">
+                        <h2 class="section-title">Automation & AI Projects (In Production)</h2>
+
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">PrudentMe: AI Personal Finance App
+                                                <span class="project-links">
+                                                        [<a href="https://github.com/ReXcelSp/Prudentme"
+                                                                class="project-link" target="_blank">View Repo</a>]
+                                                        [<a href="https://www.prudentme.com" class="project-link"
+                                                                target="_blank">Live Site</a>]
+                                                </span>
+                                        </span>
+                                </div>
+                                <ul class="job-bullets">
+                                        <li>Built a full-stack financial application in TypeScript and Node.js. Uses the
+                                                OpenAI GPT-4 API to parse and instantly categorize raw banking data.
+                                        </li>
+                                        <li>Logged 94% accuracy with a self-correcting feedback mechanism, maintaining
+                                                99.9% reliability on categorization requests through customized retry
+                                                logic.</li>
+                                </ul>
+                        </div>
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Job Application Pipeline Tracker
+                                                <span class="project-links">
+                                                        [<a href="https://github.com/ReXcelSp/appscript-automation"
+                                                                class="project-link" target="_blank">View Repo</a>]
+                                                </span>
+                                        </span>
+                                </div>
+                                <ul class="job-bullets">
+                                        <li>Wrote a Google Apps Script that scans Gmail for application updates and
+                                                pipes the text through the Gemini 2.5 API to extract statuses.</li>
+                                        <li>Automatically populates a central Google Sheet tracker on a scheduled batch
+                                                run, entirely removing the need for manual record keeping.</li>
+                                </ul>
+                        </div>
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Victor's Assistant: WhatsApp & Telegram Agent
+                                                <span class="project-links">
+                                                        [<a href="https://github.com/ReXcelSp/victors-assistant"
+                                                                class="project-link" target="_blank">View Repo</a>]
+                                                </span>
+                                        </span>
+                                </div>
+                                <ul class="job-bullets">
+                                        <li>Configured a personal agent using OpenClaw and the DeepSeek API to handle
+                                                direct messages.</li>
+                                        <li>Built rules for scheduled message batching and priority contact pass-through
+                                                to manage inbound communication volume and block interruptions.</li>
+                                </ul>
+                        </div>
+                </section>
+
+                <!-- Experience -->
+                <section class="section">
+                        <h2 class="section-title">Professional Experience</h2>
+
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Analytics Engineer & BizOps Systems Builder</span>
+                                        <span class="job-date">Dec 2023 – Dec 2025</span>
+                                </div>
+                                <div class="job-company"><a href="https://testlio.com" target="_blank">Testlio</a> ·
+                                        Remote (SaaS QA Platform)</div>
+                                <ul class="job-bullets">
+                                        <li><strong>BizOps automation workflows:</strong> Authored Google Apps Scripts
+                                                linking third-party applications to Slack, firing automatic
+                                                notifications for new client closures and managing Leapsome peer
+                                                recognition alerts across 200 staff members.</li>
+                                        <li><strong>Google Sheets operating system:</strong> Replaced scattered record
+                                                keeping by scripting a central Google Sheets architecture. Processed and
+                                                tracked 100+ active client engagements, giving the executive leadership
+                                                team a consolidated view of delivery operations.</li>
+                                        <li><strong>Self-serve reporting scale:</strong> Committed 650 code updates to
+                                                the analytics platform. Built datasets for churn, engagement scores, and
+                                                revenue that let 15 teams pull their own answers without opening support
+                                                tickets.</li>
+                                        <li><strong>AI adoption testing:</strong> Set up an A/B testing framework to
+                                                measure if internal AI features actually improved tester speed and bug
+                                                report quality, driving tool adoption decisions with hard data.</li>
+                                        <li><strong>Data platform:</strong> Maintained the dbt models, Airflow
+                                                orchestrations, and Redshift pipelines that kept the business data
+                                                flowing correctly.</li>
+                                </ul>
+                        </div>
+
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Data & Analytics Lead</span>
+                                        <span class="job-date">Nov 2021 – Dec 2022</span>
+                                </div>
+                                <div class="job-company"><a href="https://www.achievetestprep.com"
+                                                target="_blank">Achieve Test Prep</a> · Remote (EdTech)</div>
+                                <ul class="job-bullets">
+                                        <li><strong>Tool stack evaluation:</strong> Audited existing BI reporting tools
+                                                and migrated the entire company to BigQuery and Looker. Reduced software
+                                                licensing costs by 85% and increased reporting generation speed by 80%.
+                                        </li>
+                                        <li><strong>Org wide adoption:</strong> Designed and ran training sessions to
+                                                teach operational teams how to use new dashboards. Increased daily
+                                                active usage of data platforms by 50%.</li>
+                                        <li><strong>People data metrics:</strong> Built statistical models (85%
+                                                accuracy) to identify students at risk of dropping out, triggering
+                                                immediate intervention workflows that improved class completion rates by
+                                                10%.</li>
+                                </ul>
+                        </div>
+
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Specialist, Data Analytics & Market Intelligence</span>
+                                        <span class="job-date">Sep 2020 – Oct 2021</span>
+                                </div>
+                                <div class="job-company"><a href="https://www.dangote.com" target="_blank">Dangote
+                                                Industries Limited</a> · Lagos, Nigeria</div>
+                                <ul class="job-bullets">
+                                        <li><strong>Process automation:</strong> Scripted manual data aggregation tasks
+                                                to run automatically, saving operations and finance staff 60 hours per
+                                                week and giving the leadership team real-time visibility.</li>
+                                        <li><strong>Supply chain optimization:</strong> Created a demand forecasting
+                                                model that accurately predicted inventory needs, dropping stockouts by
+                                                15% across physical distribution points.</li>
+                                </ul>
+                        </div>
+
+                        <div class="job">
+                                <div class="job-header">
+                                        <span class="job-title">Data Science Manager</span>
+                                        <span class="job-date">Dec 2018 – Aug 2020</span>
+                                </div>
+                                <div class="job-company"><a href="https://www.nielsen.com" target="_blank">Nielsen</a> ·
+                                        Lagos, Nigeria</div>
+                                <ul class="job-bullets">
+                                        <li>Ran the data pipeline lifecycle, improving data quality and extraction speed
+                                                by 30%. Translated complex technical problems into fast, actionable
+                                                decisions for client product teams.</li>
+                                </ul>
+                        </div>
+                </section>
+
+                <!-- Technical Skills -->
+                <section class="section">
+                        <h2 class="section-title">Technical Expertise</h2>
+                        <div class="skills-grid">
+                                <div class="skill-category">
+                                        <div class="skill-label">Automation & AI</div>
+                                        <div class="skill-tags">
+                                                <span class="skill-tag">Google Apps Script</span>
+                                                <span class="skill-tag">Python & Node.js</span>
+                                                <span class="skill-tag">OpenAI API</span>
+                                                <span class="skill-tag">Gemini API</span>
+                                                <span class="skill-tag">OpenClaw</span>
+                                        </div>
+                                </div>
+                                <div class="skill-category">
+                                        <div class="skill-label">Platforms & Tools</div>
+                                        <div class="skill-tags">
+                                                <span class="skill-tag">Google Sheets</span>
+                                                <span class="skill-tag">Slack</span>
+                                                <span class="skill-tag">Notion</span>
+                                                <span class="skill-tag">Leapsome</span>
+                                                <span class="skill-tag">Linear</span>
+                                        </div>
+                                </div>
+                                <div class="skill-category">
+                                        <div class="skill-label">Infrastructure & Data</div>
+                                        <div class="skill-tags">
+                                                <span class="skill-tag">SQL & dbt</span>
+                                                <span class="skill-tag">Apache Airflow</span>
+                                                <span class="skill-tag">Redshift & BigQuery</span>
+                                                <span class="skill-tag">Git & GitHub</span>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+
+                <!-- Education -->
+                <section class="section">
+                        <h2 class="section-title">Education</h2>
+                        <div class="education-item">
+                                <div>
+                                        <span class="edu-degree">Master of Business Administration (MBA)</span>
+                                        <span class="edu-school"> — Rome Business School</span>
+                                </div>
+                                <div class="edu-date">2025 – 2026</div>
+                        </div>
+                        <div class="education-item">
+                                <div>
+                                        <span class="edu-degree">Bachelor of Science, Mathematics & Statistics</span>
+                                        <span class="edu-school"> — University of Lagos</span>
+                                </div>
+                                <div class="edu-date">2010 – 2015</div>
+                        </div>
+                </section>
+        </div>
+</body>
+
+</html>

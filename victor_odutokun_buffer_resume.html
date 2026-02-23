@@ -309,6 +309,20 @@
                         size: letter;
                         margin: 0;
                 }
+
+                /* Ensure links and text are selectable/clickable in PDF */
+                @media print {
+                        a {
+                                text-decoration: none !important;
+                                color: #415a77 !important;
+                                pointer-events: auto !important;
+                        }
+
+                        * {
+                                -webkit-user-select: text !important;
+                                user-select: text !important;
+                        }
+                }
         </style>
 </head>
 
@@ -318,7 +332,8 @@
                         <h1 class="name">VICTOR ODUTOKUN</h1>
                         <p class="title">Senior Data Scientist | SaaS Analytics & Machine Learning</p>
                         <div class="contact">
-                                <span>📧 victorodutokun@gmail.com</span>
+                                <span>📧 <a href="mailto:victorodutokun@gmail.com"
+                                                style="text-decoration: none; color: inherit;">victorodutokun@gmail.com</a></span>
                                 <span>📍 Lagos, Nigeria (CET +1)</span>
                                 <span>🔗 <a
                                                 href="https://www.linkedin.com/in/victorodutokun/">linkedin.com/in/victorodutokun</a></span>
